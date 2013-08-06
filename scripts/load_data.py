@@ -1,7 +1,12 @@
+import os
 import json
 import psycopg2
 
-conn = psycopg2.connect('dbname=philly_hoods user=vagrant')
+db = os.environ['OPENSHIFT_APP_NAME']
+user = os.environ['OPENSHIFT_POSTGRESQ_DB_USERNAME']
+
+conn = psycopg2.connect('dbname=' + db + ' user=' + user)
+print conn
 
 cur = conn.cursor()
 
