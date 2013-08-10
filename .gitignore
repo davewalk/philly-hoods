@@ -1,0 +1,8 @@
+node_modules
+*.sublime-project
+*.sublime-workspace
+db-notes.md
+.vagrant
+notes
+data
+cookbooks
