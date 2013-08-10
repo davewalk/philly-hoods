@@ -1,6 +1,14 @@
 # Philly Hoods - A neighborhood API for Philadelphia (coming soon!)
 
-Use this API to find out what neighborhood you're in. Give it a pair of coordinates and it'll tell you.
+Use this API to find out what neighborhood you're in. 
+
+You can give it a neighborhood name:
+
+`/v1/neighborhoods/bella vista`
+
+or a pair of coordinates in Web Mercator:
+
+`/v1/locations/39.952335,-75.163789`
 
 ### About the Data
 
