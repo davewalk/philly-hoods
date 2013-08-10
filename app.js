@@ -23,6 +23,6 @@ server.get(/^(\/v1\/locations\/)(\d+\.?(?=\d)\d*,-\d+\.?(?=\d)\d*$)/, locations.
 
 server.get('/v1/locations/:coords', invalid.respond);
 
-server.listen(PORT, function () {
+server.listen(80, function () {
   console.log('%s listening at %s', 'Philly Neighborhoods API', server.url);
 });
