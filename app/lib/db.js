@@ -1,16 +1,14 @@
 var pg = require('pg');
 
-var connString = 'postgres://vagrant:vagrant@localhost:5432/philly_hoods';
+var database = '/phillyhoods';
+
+var connString = process.env.OPENSHIFT_POSTGRESQL_DB_URL + database;
 
 exports.fromCoords = function(x, y, callback) {
 
-  // console.log('in fromCoords');
-  // console.log(x);
-  // console.log(y);
-
   var client = new pg.Client(connString);
 
-  var query = "SELECT name, alias, ST_AsGeoJSON(geom) as geometry FROM hoods WHERE ST_Contains(geom, ST_GeomFromText('POINT(" + x + " " + y + ")'));";
+  var query = "SELECT name, alias, ST_AsGeoJSON(geom) as geometry FROM hoods WHERE ST_Contains(geom, ST_GeomFromText('POINT(" + x + " " + y + ")', 4326));";
 
   console.log(query);
   client.connect(function (err) {
