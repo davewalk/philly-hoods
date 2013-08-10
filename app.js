@@ -1,4 +1,5 @@
-var PORT = process.env.OPENSHIFT_INTERNAL_PORT || process.env.OPENSHIFT_NODEJS_PORT  || 8080;
+var PORT = process.env.OPENSHIFT_NODEJS_PORT  || 8080;
+var IP = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
 
 var restify = require('restify')
   , locations = require('./routes/locations')
@@ -23,6 +24,6 @@ server.get(/^(\/v1\/locations\/)(\d+\.?(?=\d)\d*,-\d+\.?(?=\d)\d*$)/, locations.
 
 server.get('/v1/locations/:coords', invalid.respond);
 
-server.listen(80, function () {
-  console.log('%s listening at %s', 'Philly Neighborhoods API', server.url);
+server.listen(PORT, IP, function () {
+  console.log('%s listening at %s', server.name, server.url);
 });
