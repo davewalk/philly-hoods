@@ -1,5 +1,10 @@
 var PORT = process.env.OPENSHIFT_NODEJS_PORT  || 8080;
-var IP = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+
+if (process.env.PHILLYHOODS_APP === 'development') {
+  var IP = '0.0.0.0';
+} else {
+  var IP = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+}
 
 var restify = require('restify')
   , locations = require('./routes/locations')
