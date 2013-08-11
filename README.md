@@ -21,5 +21,6 @@ In the future this API may be able to:
 * Take an address and tell you the neighborhood
 * Take coordinates pairs for coordinates systems besides Web Mercator
 * Include other neighborhood boundaries besides Azavea's
+* POST a GeoJSON line or polygon geometry and tell you which neighborhood(s) it's in
 
 Have a question or want to help? Open an issue or contact me [@ddw17](http://www.twitter.com/ddw17) 
