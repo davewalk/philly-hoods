@@ -23,16 +23,18 @@ body {
     line-height: 1.4;
 }
 
+
 a {
-    color: #00e;
+    color: #6DBCDB;
+    text-decoration: none;
 }
 
 a:visited {
-    color: #551a8b;
+    color: #6DBCDB;
 }
 
 a:hover {
-    color: #06e;
+    color: #2C3E50;
 }
 
 /*
@@ -65,7 +67,45 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+#hero {
+    width: 800px;
+    margin: 0 auto;
+}
 
+h1 {
+    color: #6DBCDB;
+    font-family: 'Dosis', sans-serif;
+    margin-bottom: .1em;
+}
+
+h2 {
+    font-family: 'Dosis', sans-serif;
+}
+body {
+    background-color: #FFF;
+    display: block;
+    color: #2C3E50;
+
+}
+
+.snippet {
+    background-color: #D7DADB;
+    padding: 10px;
+    border: 1px #2C3E50 solid;
+}
+
+.description {
+    margin-bottom: 0.25em;
+    margin-top: 0;
+}
+
+.pure-g-r {
+    letter-spacing: 0;
+}
+
+a.pure-button {
+    color: #FFF;
+}
 
 
 

@@ -32,14 +32,68 @@
         <!--
         <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
         -->
-
+        <link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+        <link href="vendor/leaflet/dist/leaflet.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.1/pure-min.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="vendor/modernizr/modernizr.js"></script>
     </head>
     <body>
 
-        <!-- Add your site or application content here -->
+        <div id="container" class="pure-g-r">
+            <div id="hero" class="pure-u-1-1">
+                <center><h1 class="pure-u-1-1">Philly Hoods</h1>
+                    <h2 class="description">a neighborhoods API for Philadelphia</h2></center>
+
+                    Give it a neighborhood name and it'll try to give you the GeoJSON of it:
+
+                   <pre class="snippet">GET http://api.phillyhoods.net/v1/neighborhoods/bella vista</pre>
+
+<pre class="snippet">
+{
+    "request":{
+        "neighborhood":"bella vista"
+    },
+    "results":[
+        {
+            "name":"Bella Vista",
+            "alias":"BELLA_VISTA",
+            "geometry":"{\"type\":\"MultiPolygon\",\"coordinates\":[[[[-75.155495999999999,39.942376000000003],[-75.155451999999997,39.942369999999997],[-75.153891999999999,39.942169999999997],[-75.152322999999996,39.941966000000001],[-75.152417999999997,39.941540000000003],[-75.152514999999994,39.941101000000003],[-75.152677999999995,39.940292999999997],[-75.152739999999994,39.939981000000003],[-75.152805999999998,39.939663000000003],[-75.152952999999997,39.939120000000003],[-75.153063000000003,39.938671999999997],[-75.153267,39.937716000000002],[-75.153414999999995,39.937026000000003],[-75.153599,39.936321],[-75.153717999999998,39.935828000000001],[-75.153785999999997,39.935467000000003],[-75.153847999999996,39.935122999999997],[-75.153863000000001,39.935127000000001],[-75.155390999999995,39.935547999999997],[-75.156254000000004,39.935783000000001],[-75.159322000000003,39.936602999999998],[-75.159948999999997,39.936771],[-75.159683999999999,39.937995000000001],[-75.159417000000005,39.939182000000002],[-75.159032999999994,39.940959999999997],[-75.158829999999995,39.941932000000001],[-75.158637999999996,39.942777999999997],[-75.158018999999996,39.942700000000002],[-75.157525000000007,39.942635000000003],[-75.157026000000002,39.942571999999998],[-75.156612999999993,39.942517000000002],[-75.156240999999994,39.942469000000003],[-75.155495999999999,39.942376000000003]]]]}"
+        }
+    ]
+}
+</pre>
+    
+                    <p>You can also pass <code>lat,long</code> coordinate pairs:</p>
+
+                    <pre class="snippet">GET http://api.phillyhoods.net/v1/locations/39.952335,-75.163789</pre>
+
+                    <h2>Try It Out!</h2>
+
+                    <a class="pure-button pure-button-primary" href="#">Go!</a>
+                    [Map here]
+
+                    <div id="map"></div>
+
+                    <h2>About the Data</h2>
+                    <p>The neighborhood boundaries dataset used in this API is graciously provided by <a href="http://www.azavea.com/">Azavea</a> under the <a href="http://creativecommons.org/licenses/by/3.0/us/">Creative Commons Attribution 3.0 license</a> meaning it can be freely used and shared. Azavea is not involved in any way with this project.</p>
+
+                    <p>Please also keep in mind that there is no official neighborhood boundary dataset. There are many different versions for Philadelphia. In the future I'd like to include others (see below) to give the user more options.</p>
+
+                    <h2>Future</h2>
+                    <p>In the future this API may be able to:</p>
+
+                    <ul>
+                        <li>Take an address and tell you the neighborhood</li>
+                        <li>Take coordinates pairs for coordinates systems besides Web Mercator</li>
+                        <li>Include other neighborhood boundaries besides Azavea's</li>
+                        <li>Take a GeoJSON line or polygon geometry and tell you which neighborhood(s) it's in</li>
+                        <li>Include additional data by neighborhood (Census?)</li>
+                    </ul>
+                    <p>Have a question or want to help? Open <a href="https://github.com/davewalk/philly-hoods">an issue on GitHub</a> or contact me <a href="http://www.twitter.com/ddw17">@ddw17</a>.</p>
+            </div>
+        </div>
 
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="js/main.js"></script>
