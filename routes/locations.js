@@ -1,12 +1,12 @@
 var db = require('../lib/db');
 
-exports.get = function (req, res) {
+exports.get = function (req, res, next) {
 
   var coords = req.params[1];
 
   var x = coords.split(',')[1];
   var y = coords.split(',')[0];
-  
+
   db.fromCoords(x, y, function (err, result) {
     if (err) {
       res.json(500, {error: 'Error attempting to get neighborhood: ' + err});
@@ -19,4 +19,5 @@ exports.get = function (req, res) {
     }
 
   });
+  return next();
 };

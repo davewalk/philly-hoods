@@ -1,6 +1,6 @@
 var db = require('../lib/db');
 
-exports.get = function (req, res) {
+exports.get = function (req, res, next) {
 
   var editedName = req.params.name.toUpperCase();
   var editedName = editedName.replace(' ', '_');
@@ -12,4 +12,5 @@ exports.get = function (req, res) {
     }
 
   });
+  return next();
 };
