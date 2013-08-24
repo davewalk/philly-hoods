@@ -1,4 +1,9 @@
 #!/bin/bash
+# This is a simple build script and will be executed on your CI system if
+# available.  Otherwise it will execute while your application is stopped
+# before the deploy step.  This script gets executed directly, so it
+# could be python, php, ruby, etc.
+
 
 #  Source utility functions.
 source "$OPENSHIFT_REPO_DIR/.openshift/lib/utils"
@@ -16,6 +21,7 @@ if [ -f "$tmp_package_json" ]; then
    [ -f "${OPENSHIFT_REPO_DIR}/package.json" ]  ||    \
       mv "$tmp_package_json" "${OPENSHIFT_REPO_DIR}/package.json"
 fi
+
 
 #  Do npm install with the new npm binary.
 if [ -f "${OPENSHIFT_REPO_DIR}"/package.json ]; then
