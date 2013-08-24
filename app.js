@@ -28,10 +28,13 @@ var server = restify.createServer({
   log: logger
 });
 
-server.get('/', function (req, res, next) { res.json(200, {application: 'Philly-Hoods', versions: ['v1'] }); });
+server.use(restify.queryParser());
+server.use(restify.jsonp());
+
+server.get('/', function (req, res, next) { res.send(200, {application: 'Philly-Hoods', versions: ['v1'] }); });
 
 server.get('/v1/', function (req, res, next) {
-  res.json(200, { application: 'Philly-Hoods',
+  res.send(200, { application: 'Philly-Hoods',
     version: '1',
     endpoints: ['/neighborhoods', '/locations']
     }
