@@ -24,7 +24,6 @@ exports.list = function (req, res, next) {
 
       for (var key in result) {
         var val = result[key]['name'];
-        console.log(val);
         results.push(val);
       }
       res.json(200, {request: 'neighborhoods', results: results});
