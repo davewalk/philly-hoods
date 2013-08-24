@@ -38,6 +38,8 @@ server.get('/v1/', function (req, res, next) {
   );
 });
 
+server.get('/v1/neighborhoods/', neighborhoods.list);
+
 server.get('/v1/neighborhoods/:name', neighborhoods.get);
 
 server.get(/^(\/v1\/locations\/)(\d+\.?(?=\d)\d*,-\d+\.?(?=\d)\d*$)/, locations.get);
