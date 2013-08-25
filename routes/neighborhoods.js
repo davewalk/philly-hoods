@@ -26,7 +26,7 @@ exports.list = function (req, res, next) {
         var val = result[key]['name'];
         results.push(val);
       }
-      res.send(200, {request: 'neighborhoods', results: results});
+      res.send(200, {request: 'neighborhoods', results: result});
     }
   });
   return next();
