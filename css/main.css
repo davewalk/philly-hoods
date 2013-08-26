@@ -74,12 +74,12 @@ textarea {
 
 h1 {
     color: #6DBCDB;
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Gudea', sans-serif;
     margin-bottom: .1em;
 }
 
 h2 {
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Gudea', sans-serif;
 }
 body {
     background-color: #FFF;
@@ -106,21 +106,6 @@ body {
 a.pure-button {
     color: #FFF;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ==========================================================================
    Helper classes
