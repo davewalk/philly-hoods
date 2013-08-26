@@ -1,4 +1,5 @@
-var db = require('../lib/db');
+var db = require('../lib/db')
+  , geojson = require('../lib/geojson');
 
 exports.get = function (req, res, next) {
 
@@ -14,7 +15,9 @@ exports.get = function (req, res, next) {
       if (!result) {
         res.send(400, {request: { x: x, y: y }, results: { error: { message: 'Coordinates requested aren\'t within Philadelphia' }}});
       } else {
-      res.send(200, {request: { x: x, y: y }, results: result});
+        geojson.parse(result, function(resp) {
+          res.send(200, {request: { x: x, y: y }, results: resp});
+        });
       }
     }
 

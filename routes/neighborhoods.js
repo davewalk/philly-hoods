@@ -1,14 +1,16 @@
-var db = require('../lib/db');
+var db = require('../lib/db')
+  , geojson = require('../lib/geojson');
 
 exports.get = function (req, res, next) {
-
   var editedName = req.params.name.toUpperCase();
   var editedName = editedName.replace(' ', '_');
-  db.fromName(editedName, function (err, result) {
+  db.fromName(editedName, function (err, results) {
     if (err) {
       res.send(500, {error: 'Error attempting to get neighborhood: ' + err});
     } else {
-      res.send(200, {request: { neighborhood: req.params.name }, results: result});
+        geojson.parse(results, function(result) {
+          res.send(200, {request: { neighborhood: req.params.name }, results: result});
+        });
     }
   });
   return next();

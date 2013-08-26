@@ -24,7 +24,8 @@
   "dependencies": {
     "restify": "~2.6.0",
     "pg": "~2.3.1",
-    "bunyan": "~0.21.4"
+    "bunyan": "~0.21.4",
+    "geojson": "~0.1.4"
   },
   "engines": {
     "node": ">= 0.8.0",
