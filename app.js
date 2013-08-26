@@ -4,6 +4,10 @@ if (process.env.PHILLYHOODS_APP === 'development') {
   var IP = '0.0.0.0';
 } else {
   var IP = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+  require('strong-agent').profile(
+    process.env.NODEFLY,
+    'philly-hoods'
+  );
 }
 
 var restify = require('restify')
