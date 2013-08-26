@@ -1,6 +1,6 @@
 {
   "name": "philly-hoods-api",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A Philadelphia Neighborhoods API",
   "main": "app.js",
   "scripts": {
@@ -17,6 +17,7 @@
     "API",
     "geo",
     "geospatial",
+    "spatial",
     "GIS"
   ],
   "author": "Dave Walk",
