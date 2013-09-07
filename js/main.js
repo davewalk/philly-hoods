@@ -20,10 +20,12 @@ var Hoods = Hoods || {};
       dataType: 'json',
       success: displayNeighborhood,
       error: function (jqXHR, textString, errorThrown) {
-        $('.status').html('<span>Aww damn, there seems to be a problem with the API! Please try again later.</span>');
-        console.log(jqXHR.statusText);
-        console.log(jqXHR.status);
-        console.log(errorThrown);
+        var status = jqXHR.statusCode();
+        if (jqXHR.status === 400) {
+          $('.status').html('<span>Hmm, it doesn\'t appear that you are within Philadelphia city limits.</span>');
+        } else {
+          $('.status').html('<span>Aww damn, there seems to be a problem with the API! Please try again later.</span>');
+        }
       }
     })
   };
