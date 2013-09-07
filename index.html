@@ -33,7 +33,7 @@
         <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
         -->
         <link href='http://fonts.googleapis.com/css?family=Gudea:700' rel='stylesheet' type='text/css'>
-        <link href="vendor/leaflet/dist/leaflet.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.1/pure-min.css">
         <link rel="stylesheet" href="css/main.css">
@@ -115,10 +115,13 @@
 
                     <h2>Try It Out!</h2>
 
-                    <a class="pure-button pure-button-primary" href="#">Go!</a>
-                    [Map here]
+                    <a class="pure-button pure-button-primary btn-go">Go!</a>
+
+                    <p><div class="status"></div></p>
 
                     <div id="map"></div>
+
+                    <p><div class="note"><i>NOTE: Coordinates are approximate</i></div><p>
 
                     <h2>About the Data</h2>
                     <p>The neighborhood boundaries dataset used in this API is graciously provided by <a href="http://www.azavea.com/">Azavea</a> under the <a href="http://creativecommons.org/licenses/by/3.0/us/">Creative Commons Attribution 3.0 license</a> meaning it can be freely used and shared. Azavea is not involved in any way with this project.</p>
@@ -141,6 +144,8 @@
         </div>
 
         <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
         <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
