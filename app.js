@@ -37,6 +37,12 @@ server.use(restify.jsonp());
 server.use(restify.CORS());
 server.use(restify.fullResponse());
 
+server.use(restify.throttle({
+  rate: 3,
+  burst: 3,
+  ip: true
+}));
+
 server.get('/', function (req, res, next) { res.send(200, {application: 'Philly-Hoods', versions: ['v1'] }); });
 
 server.get('/v1/', function (req, res, next) {
