@@ -34,6 +34,8 @@ var server = restify.createServer({
 
 server.use(restify.queryParser());
 server.use(restify.jsonp());
+server.use(restify.CORS());
+server.use(restify.fullResponse());
 
 server.get('/', function (req, res, next) { res.send(200, {application: 'Philly-Hoods', versions: ['v1'] }); });
 
