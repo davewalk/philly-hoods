@@ -10,28 +10,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="cleartype" content="on">
 
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png">
-        <link rel="shortcut icon" href="img/touch/apple-touch-icon.png">
-
-        <!-- Tile icon for Win8 (144x144 + tile color) -->
-        <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
-        <meta name="msapplication-TileColor" content="#222222">
-
-
-        <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
-        <!--
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <meta name="apple-mobile-web-app-title" content="">
-        -->
-
-        <!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
-        <!--
-        <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
-        -->
         <link href='http://fonts.googleapis.com/css?family=Gudea:700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
         <link rel="stylesheet" href="css/normalize.css">
@@ -44,6 +22,7 @@
         <div id="container" class="pure-g-r">
             <div id="hero" class="pure-u-1-1">
                 <center><h1 class="pure-u-1-1">Philly Hoods</h1>
+                    <a href="https://github.com/davewalk/philly-hoods"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
                     <h2 class="description">a neighborhoods API for Philadelphia</h2></center>
 
                     Give it a neighborhood name and it'll try to give you the GeoJSON of it:
@@ -79,7 +58,7 @@
 }
 </pre>
     
-                    <p>You can also pass <code>lat,long</code> coordinate pairs:</p>
+                    <p>Perhaps more importantly, you can also pass <code>lat,long</code> coordinate pairs:</p>
 
                     <pre class="snippet">GET http://api.phillyhoods.net/v1/locations/39.952335,-75.163789</pre>
 
@@ -113,6 +92,10 @@
 }
 </pre>
 
+                    <p>CORS is enabled, however you can pass a param of <strong>?jsonp=</strong> or <strong>?callback=</strong> if you require JSONP.</p>
+
+                    <p>I'm currently hosting this on the free tier of <a href="http://www.openshift.com">OpenShift</a> so I'm throttling by IP to three requests/sec. If you go over that you'll start getting <strong>429 Too Many Requests</strong> responses. If you think you'll need more than this, tweet at me: <a href="http://www.twitter.com/ddw17">@ddw17</a>.
+
                     <h2>Try It Out!</h2>
 
                     <a class="pure-button pure-button-primary btn-go">Go!</a>
@@ -139,7 +122,7 @@
                         <li>Other data formats besides GeoJSON (KML?)</li>
                         <li>Include additional data by neighborhood (Census?)</li>
                     </ul>
-                    <p>Have a question, feature request or want to help? Open <a href="https://github.com/davewalk/philly-hoods">an issue on GitHub</a> or contact me <a href="http://www.twitter.com/ddw17">@ddw17</a>.</p>
+                    <p>This API was created by Dave Walk. Have a question, feature request or want to help? Open <a href="https://github.com/davewalk/philly-hoods">an issue on GitHub</a> or contact me <a href="http://www.twitter.com/ddw17">@ddw17</a>.</p>
             </div>
         </div>
 

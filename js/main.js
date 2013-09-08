@@ -57,10 +57,15 @@ var Hoods = Hoods || {};
 
   map.addLayer(hoodLayer);
 
+  // Feature detection
   if (window.navigator.geolocation) {
     $('.btn-go').click(getCoords);
   } else {
     $('.status').html('<span>Your browser does not support geolocation. <a href="http://browsehappy.com/">Please upgrade</a>.</span>');
+  }
+
+  if (!'withCredentials' in new XMLHttpRequest()) {
+    $('.status').html('<span>You must <a href="http://browsehappy.com/">upgrade your browser</a> for this sample to work.</span>');
   }
 
 })(Hoods, jQuery);
