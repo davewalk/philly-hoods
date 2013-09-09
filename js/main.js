@@ -3,12 +3,15 @@ var Hoods = Hoods || {};
 (function (Hoods, $) {
 
   var getCoords = function () {
+    _gaq.push(['_trackEvent', 'UserInteraction', 'Button', 'Go!']);
     $('.status').html('<span>Getting your location...</span>');
     navigator.geolocation.getCurrentPosition(
       function (pos) {
+        _gaq.push(['_trackEvent', 'Geolocation', 'Success', pos.coords.latitude + ',' + pos.coords.longitude]);
         getNeighborhood([pos.coords.latitude, pos.coords.longitude]);
       },
       function (err) {
+        _gaq.push(['_trackEvent', 'Geolocation', 'Error', error.message]);
         $('.status').html('<span>Aww damn, unable to get your location. Please check your geolocation settings and try again.</span>');
       });
   };
@@ -20,10 +23,11 @@ var Hoods = Hoods || {};
       dataType: 'json',
       success: displayNeighborhood,
       error: function (jqXHR, textString, errorThrown) {
-        var status = jqXHR.statusCode();
         if (jqXHR.status === 400) {
+          _gaq.push(['_trackEvent', 'GeoNeighborhood', 'Error', jqXHR.status]);
           $('.status').html('<span>Hmm, it doesn\'t appear that you are within Philadelphia city limits.</span>');
         } else {
+          _gaq.push(['_trackEvent', 'GeoNeighborhood', 'Error', jqXHR.status]);
           $('.status').html('<span>Aww damn, there seems to be a problem with the API! Please try again later.</span>');
         }
       }
@@ -31,6 +35,7 @@ var Hoods = Hoods || {};
   };
 
   var displayNeighborhood = function (data) {
+    _gaq.push(['_trackEvent', 'GeoNeighborhood', 'Success', data.results.features[0].properties.name]);
     $('.status').html('<span>You are in <b>' + data.results.features[0].properties.name + '</b>!</span>');
     hoodLayer.clearLayers();
     hoodLayer.addData(data.results);
@@ -59,12 +64,15 @@ var Hoods = Hoods || {};
 
   // Feature detection
   if (window.navigator.geolocation) {
+    _gaq.push(['_trackEvent', 'FeatureDetection', 'Geolocation', 'Success']);
     $('.btn-go').click(getCoords);
   } else {
+    _gaq.push(['_trackEvent', 'FeatureDetection', 'Geolocation', 'Failure']);
     $('.status').html('<span>Your browser does not support geolocation. <a href="http://browsehappy.com/">Please upgrade</a>.</span>');
   }
 
   if (!'withCredentials' in new XMLHttpRequest()) {
+    _gaq.push(['_trackEvent', 'FeatureDetection', 'CORS', 'Failure']);
     $('.status').html('<span>You must <a href="http://browsehappy.com/">upgrade your browser</a> for this sample to work.</span>');
   }
 
