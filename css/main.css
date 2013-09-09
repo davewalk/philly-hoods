@@ -242,9 +242,3 @@ textarea[contenteditable] {
         margin: 0 auto;
     }
 }
-
-/*@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-       only screen and (min-resolution: 144dpi) {
-    /* Style adjustments for viewports that meet the condition */
-}
-*/
