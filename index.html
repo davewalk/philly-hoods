@@ -25,7 +25,9 @@
                     <a href="https://github.com/davewalk/philly-hoods"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
                     <h2 class="description">a neighborhoods API for Philadelphia</h2></center>
 
-                    Give it a neighborhood name and it'll try to give you the GeoJSON of it:
+                    <p>Use this simple API to get data about neighborhoods in Philadelphia.</p>
+
+                    <p>Give it a neighborhood name and it'll try to give you the <a href="http://www.geojson.org/geojson-spec.html">GeoJSON</a> of it:</p>
 
                    <pre class="snippet">GET http://api.phillyhoods.net/v1/neighborhoods/bella vista</pre>
 
@@ -94,7 +96,7 @@
 
                     <p>CORS is enabled, however you can pass a param of <strong>?jsonp=</strong> or <strong>?callback=</strong> if you require JSONP.</p>
 
-                    <p>I'm currently hosting this on the free tier of <a href="http://www.openshift.com">OpenShift</a> so I'm throttling by IP to three requests/sec. If you go over that you'll start getting <strong>429 Too Many Requests</strong> responses. If you think you'll need more than this, tweet at me: <a href="http://www.twitter.com/ddw17">@ddw17</a>.
+                    <p>I'm currently hosting this on the free tier of <a href="http://www.openshift.com">OpenShift</a> so I'm throttling by IP to three requests/sec. If you go over that you'll start getting <strong>429 Too Many Requests</strong> responses. If you think you'll need more than this get at me: <a href="http://www.twitter.com/ddw17">@ddw17</a>.
 
                     <h2>Try It Out!</h2>
 
