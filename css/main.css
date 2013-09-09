@@ -67,9 +67,13 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-#hero {
-    width: 800px;
+.docs {
+    width: 50%;
     margin: 0 auto;
+}
+
+#main {
+    width: 100%;
 }
 
 h1 {
@@ -85,7 +89,6 @@ body {
     background-color: #FFF;
     display: block;
     color: #2C3E50;
-
 }
 
 .snippet {
@@ -109,7 +112,7 @@ a.pure-button {
 
 #map {
     height: 400px;
-    width: 800px;
+    width: 100%;
 }
 
 .status {
@@ -232,11 +235,16 @@ textarea[contenteditable] {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     /* Style adjustments for viewports that meet the condition */
+    .docs {
+        width: 85%;
+        margin: 0 auto;
+    }
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+/*@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
        only screen and (min-resolution: 144dpi) {
     /* Style adjustments for viewports that meet the condition */
 }
+*/

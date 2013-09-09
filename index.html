@@ -3,11 +3,11 @@
 <!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title></title>
-        <meta name="description" content="">
+        <title>Philly Hoods: a neighborhoods API for Philadelphia</title>
+        <meta name="description" content="Use this simple API to get data about neighborhoods in Philadelphia.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
         <meta http-equiv="cleartype" content="on">
 
         <link href='http://fonts.googleapis.com/css?family=Gudea:700' rel='stylesheet' type='text/css'>
@@ -15,21 +15,21 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.1/pure-min.css">
         <link rel="stylesheet" href="css/main.css">
-        <script src="vendor/modernizr/modernizr.js"></script>
     </head>
     <body>
 
         <div id="container" class="pure-g-r">
-            <div id="hero" class="pure-u-1-1">
-                <center><h1 class="pure-u-1-1">Philly Hoods</h1>
-                    <a href="https://github.com/davewalk/philly-hoods"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
-                    <h2 class="description">a neighborhoods API for Philadelphia</h2></center>
+            <div id="main" class="pure-u-1">
+                <div class="docs">
+                    <center><h1>Philly Hoods</h1>
+                        <a href="https://github.com/davewalk/philly-hoods"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+                        <h2 class="description">a neighborhoods API for Philadelphia</h2></center>
 
-                    <p>Use this simple API to get data about neighborhoods in Philadelphia.</p>
+                        <p>Use this simple API to get data about neighborhoods in Philadelphia.</p>
 
-                    <p>Give it a neighborhood name and it'll try to give you the <a href="http://www.geojson.org/geojson-spec.html">GeoJSON</a> of it:</p>
+                        <p>Give it a neighborhood name and it'll try to give you the <a href="http://www.geojson.org/geojson-spec.html">GeoJSON</a> of it:</p>
 
-                   <pre class="snippet">GET http://api.phillyhoods.net/v1/neighborhoods/bella vista</pre>
+                       <pre class="snippet">GET http://api.phillyhoods.net/v1/neighborhoods/bella vista</pre>
 
 <pre class="snippet">
 {
@@ -104,8 +104,10 @@
 
                     <p><div class="status"></div></p>
 
-                    <div id="map"></div>
-
+<!--                     <div class="map-container">
+ -->                        <div id="map"></div>
+<!--                     </div>
+ -->
                     <p><div class="note"><i>NOTE: Coordinates are approximate</i></div><p>
 
                     <h2>About the Data</h2>
@@ -125,6 +127,7 @@
                         <li>Include additional data by neighborhood (Census?)</li>
                     </ul>
                     <p>This API was created by <a href="http://www.davewalk.net">Dave Walk</a>. Have a question, feature request or want to help? Open <a href="https://github.com/davewalk/philly-hoods">an issue on GitHub</a> or contact me <a href="http://www.twitter.com/ddw17">@ddw17</a>.</p>
+                </div>
             </div>
         </div>
 
